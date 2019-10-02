@@ -1,0 +1,14 @@
+<?php
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_after_namespace' => true,
+        'blank_line_after_opening_tag' => true,
+        'cast_spaces' => true,
+        'concat_space' => ['spacing' => 'one'],
+        'full_opening_tag' => true,
+        'function_typehint_space' => true,
+        'method_argument_space' => ['on_multiline' => 'ensure_fully_multiline', 'keep_multiple_spaces_after_comma' => true],
+    ]);
