@@ -5,10 +5,10 @@ namespace TMDB\Section\Search;
 use TMDB\Section\AbstractSection;
 
 /**
- * Class SearchMovie
+ * Class Movie
  * @package TMDB\Section\Search
  */
-class SearchMovie extends AbstractSection
+class Movie extends AbstractSection
 {
     protected $path = '/search/movie';
 }
