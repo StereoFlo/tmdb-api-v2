@@ -83,13 +83,13 @@ class TMDB
     {
         $path = $this->section->getPath();
         if (false === strpos($path, '%')) {
-            if (empty($this->section->getQuery())) {
-                throw new EmptyQueryParamException('the path params is missing');
-            }
             return $this->makeRequest($this->section->getMethod(), self::API_URL . $path, [
                     'api_key' => $this->credentials->getApiKey(),
                     'language' => $this->language,
                 ] + $this->section->getQuery());
+        }
+        if (empty($this->section->getPathParams())) {
+            throw new EmptyQueryParamException('the path params is missing');
         }
         return $this->makeRequest($this->section->getMethod(), self::API_URL . vsprintf($this->section->getPath(), $this->section->getPathParams()), [
                 'api_key' => $this->credentials->getApiKey(),
